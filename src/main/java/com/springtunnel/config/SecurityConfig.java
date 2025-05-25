@@ -27,7 +27,8 @@ public class SecurityConfig {
                                 ).permitAll()
                                 .requestMatchers(
                                         "/user/test",
-                                        "/tunnel/registerClient"
+                                        "/tunnel/registerClient",
+                                        "/wg/downloadConf"
                                 ).authenticated()
                 )
                 .httpBasic(Customizer.withDefaults())

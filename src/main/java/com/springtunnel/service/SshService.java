@@ -6,18 +6,13 @@ import com.jcraft.jsch.Session;
 import com.springtunnel.util.SshUtil;
 import org.springframework.stereotype.Service;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.Objects;
 
 @Service
 public class SshService {
 
 
     static {
-        // Bu blok sadece bir kez çalışır (class yüklenirken)
         JSch.setLogger(new com.jcraft.jsch.Logger() {
             @Override
             public boolean isEnabled(int level) {
