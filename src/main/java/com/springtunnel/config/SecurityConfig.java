@@ -26,7 +26,8 @@ public class SecurityConfig {
                                         "/user/create"
                                 ).permitAll()
                                 .requestMatchers(
-                                        "/user/test"
+                                        "/user/test",
+                                        "/tunnel/registerClient"
                                 ).authenticated()
                 )
                 .httpBasic(Customizer.withDefaults())

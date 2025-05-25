@@ -4,6 +4,8 @@ import com.springtunnel.dto.UserDto;
 import com.springtunnel.persistence.model.User;
 import com.springtunnel.persistence.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -42,5 +44,9 @@ public class UserService implements UserDetailsService {
             throw new RuntimeException();
         }
         return userDto;
+    }
+
+    public String test() {
+        return SecurityContextHolder.getContext().getAuthentication().getName();
     }
 }

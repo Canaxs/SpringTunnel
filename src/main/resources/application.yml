@@ -10,3 +10,10 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+
+wireguard:
+  server:
+    public-key: ${WG_SERVER_PUBLIC_KEY}
+    ip: ${WG_SERVER_IP}
+    endpoint-port: ${WG_SERVER_PORT}
+    user: ${WG_SERVER_USER}

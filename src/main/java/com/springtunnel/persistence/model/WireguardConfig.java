@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "wireguard_configs")
 @Data
@@ -21,6 +23,7 @@ public class WireguardConfig {
     private String privateKey;
     private String publicKey;
     private String clientAddress;
+    private LocalDateTime createdAt;
 
     @OneToOne
     @JoinColumn(name = "user_id")
